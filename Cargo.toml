@@ -1,0 +1,17 @@
+[package]
+name = "gw2"
+version = "0.1.0"
+authors = ["Valentin Fries <contact@fries.io>"]
+description = "Guild Wars 2 API wrapper"
+repository = "https://github.com/mrkloan/gw2-rs.git"
+homepage = "https://github.com/mrkloan/gw2-rs.git"
+license = "WTFPLv2"
+readme = "README.md"
+
+[dependencies]
+hyper = "0.10.11"
+hyper-native-tls = "0.2.3"
+
+serde = "1.0.8"
+serde_json = "1.0.2"
+serde_derive = "1.0.8"

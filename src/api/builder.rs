@@ -34,9 +34,8 @@ impl Builder {
     fn default_http_client() -> HttpClient {
         let ssl = NativeTlsClient::new().unwrap();
         let connector = HttpsConnector::new(ssl);
-        let client = HttpClient::with_connector(connector);
-    
-        client
+        
+        HttpClient::with_connector(connector)
     }
     
     fn default_headers() -> Headers {
@@ -60,6 +59,6 @@ impl Builder {
 
 impl Into<Client> for Builder {
     fn into(self) -> Client {
-        Client::new(self.version)
+        Client::new(self.version, self.client, self.headers)
     }
 }

@@ -1,7 +1,11 @@
 use std::fmt;
 use std::ops::Deref;
 
-#[derive(PartialEq, Eq, Ord, PartialOrd, Deserialize, Debug)]
+#[derive(
+    Deserialize,
+    Debug, Clone,
+    PartialEq, Eq, Ord, PartialOrd
+)]
 pub struct Build {
     id: i32
 }

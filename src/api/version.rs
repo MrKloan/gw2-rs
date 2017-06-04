@@ -3,6 +3,10 @@
 use std::fmt;
 
 /// The API version used to request a particular endpoint.
+#[derive(
+    Debug, Clone,
+    PartialEq, Eq, PartialOrd, Ord
+)]
 pub enum Version {
     /// Version 1 (Deprecated)
     V1 = 1,

@@ -8,6 +8,10 @@ use std::fmt;
 ///
 /// - Add the `Accept-Language` HTTP header to the request with the value `<language>`.
 /// - Add the query parameter `?lang=<language>` to your request URL.
+#[derive(
+    Debug, Clone,
+    PartialEq, Eq, PartialOrd, Ord
+)]
 pub enum Lang {
     /// English (default language)
     EN,

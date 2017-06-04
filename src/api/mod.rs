@@ -18,3 +18,18 @@ pub use self::builder::Builder;
 // Models
 mod models;
 pub use self::models::*;
+
+#[cfg(test)]
+mod tests {
+    use api::*;
+    use api::requester::Requester;
+    
+    #[test]
+    fn build() {
+        let client: Client = Builder::new(Version::V2).into();
+        let build = client.request::<Build>("build");
+        
+        assert!(build.is_ok());
+        assert!(*build.unwrap() > 0);
+    }
+}

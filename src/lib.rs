@@ -30,12 +30,12 @@ pub mod api;
 
 #[cfg(test)]
 mod tests {
-	use api::prelude::*;
+	use api::v1::API;
 	
 	#[test]
 	fn api_default_build() {
-		let client: Client = Builder::new(Version::V2).into();
-		let build = client.request::<Build>("build");
+		let api = API::new(API::builder().into());
+		let build = api.build();
 		
 		assert!(build.is_ok());
 		assert!(*build.unwrap() > 0);

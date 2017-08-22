@@ -9,8 +9,8 @@ mod requester;
 mod client;
 mod builder;
 
-// Models
-mod models;
+// API implementations
+pub mod v1;
 
 // Prelude
 pub mod prelude;

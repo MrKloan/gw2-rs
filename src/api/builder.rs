@@ -15,7 +15,7 @@ use hyper::header::{
 };
 use hyper::LanguageTag;
 
-use super::{Client, Version, Lang};
+use super::prelude::*;
 
 pub struct Builder {
     version: Version,

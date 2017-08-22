@@ -2,13 +2,15 @@
 name = "gw2"
 version = "0.1.0"
 authors = ["Valentin Fries <contact@fries.io>"]
-description = "Guild Wars 2 API wrapper"
+description = "Rust wrapper for the Guild Wars 2 REST and MumbleLink API"
 repository = "https://github.com/mrkloan/gw2-rs.git"
 homepage = "https://github.com/mrkloan/gw2-rs.git"
 license = "WTFPLv2"
 readme = "README.md"
 
 [dependencies]
+error-chain = "0.10.0"
+
 hyper = "0.10.11"
 hyper-native-tls = "0.2.3"
 

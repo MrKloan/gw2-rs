@@ -3,8 +3,7 @@
 use hyper::Client as HttpClient;
 use hyper::header::Headers;
 
-use super::Version;
-use super::requester::Requester;
+use super::prelude::*;
 
 pub struct Client {
     version: Version,

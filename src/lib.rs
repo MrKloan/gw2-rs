@@ -1,6 +1,9 @@
-//! Guild Wars 2 API wrapper.
+//! Rust wrapper for the [Guild Wars 2](https://www.guildwars2.com/) REST and MumbleLink API.
 
 // Extern crates
+#[macro_use]
+extern crate error_chain;
+
 extern crate hyper;
 extern crate hyper_native_tls;
 
@@ -18,12 +21,23 @@ pub const VERSION: &'static str = env!("CARGO_PKG_VERSION");
 pub const DESCRIPTION: &'static str = env!("CARGO_PKG_DESCRIPTION");
 /// Package authors
 pub const AUTHORS: &'static str = env!("CARGO_PKG_AUTHORS");
-/// Guild Wars 2 API url
-pub const API_URL: &'static str = "https://api.guildwars2.com";
 
 // Internal modules
 mod error;
+pub use error::*;
+
 pub mod api;
 
-// Public exports
-pub use error::*;
+#[cfg(test)]
+mod tests {
+	use api::prelude::*;
+	
+	#[test]
+	fn api_default_build() {
+		let client: Client = Builder::new(Version::V2).into();
+		let build = client.request::<Build>("build");
+		
+		assert!(build.is_ok());
+		assert!(*build.unwrap() > 0);
+	}
+}

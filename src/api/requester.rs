@@ -9,14 +9,13 @@ use hyper::Client as HttpClient;
 
 use hyper::status::StatusCode;
 use hyper::header::Headers;
-use super::Version;
-
+use super::version::Version;
 
 /// Generic trait used to query the API and return an instance of a `Deserialize`able struct.
 pub trait Requester {
     
     fn request<T>(&self, endpoint: &str) -> ::Result<T> where T: DeserializeOwned {
-        let url = format!("{}/{}/{}", ::API_URL, self.get_version(), endpoint);
+        let url = format!("{}/{}/{}", ::api::URL, self.get_version(), endpoint);
         let mut response = self.get_client()
             .get(&url)
             .headers(self.get_headers())

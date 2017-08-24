@@ -12,6 +12,12 @@ extern crate serde_json;
 #[macro_use]
 extern crate serde_derive;
 
+extern crate libc;
+#[cfg(windows)]
+extern crate kernel32;
+#[cfg(windows)]
+extern crate winapi;
+
 // Constants
 /// Package name
 pub const PACKAGE: &'static str = env!("CARGO_PKG_NAME");
@@ -28,16 +34,5 @@ pub use error::*;
 
 pub mod api;
 
-#[cfg(test)]
-mod tests {
-	use api::v1::API;
-	
-	#[test]
-	fn api_default_build() {
-		let api = API::new(API::builder().into());
-		let build = api.build();
-		
-		assert!(build.is_ok());
-		assert!(*build.unwrap() > 0);
-	}
-}
+#[cfg(windows)]
+pub mod link;

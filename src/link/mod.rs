@@ -93,16 +93,19 @@ mod tests {
 			if let Some(link) = gw2.tick() {
 				println!("UI version: {}", link.ui_version());
 				println!("UI tick: {}", link.ui_tick());
+				println!("Avatar: Position[{},{},{}], Front[{},{},{}], Top[{},{},{}]", link.avatar_position[0], link.avatar_position[1], link.avatar_position[2], link.avatar_front[0], link.avatar_front[1], link.avatar_front[2], link.avatar_top[0], link.avatar_top[1], link.avatar_top[2]);
 				println!("Name: {}", link.name());
-				println!("Description: {}", link.description());
+				println!("Camera: Position[{},{},{}], Front[{},{},{}], Top[{},{},{}]", link.camera_position[0], link.camera_position[1], link.camera_position[2], link.camera_front[0], link.camera_front[1], link.camera_front[2], link.camera_top[0], link.camera_top[1], link.camera_top[2]);
 				println!("Identity: {}", link.identity());
+				println!("Context len: {}", link.context_len());
 				println!("Context: {}", link.context());
+				println!("Description: {}", link.description());
 			}
 			else {
 				println!("No new data...");
 			}
 			
-			thread::sleep(time::Duration::from_millis(1000));
+			thread::sleep(time::Duration::from_millis(2000));
 		}
 	}
 }

@@ -8,3 +8,6 @@ pub use self::cats::Cat;
 
 mod colors;
 pub use self::colors::{Color, Material};
+
+mod quaggans;
+pub use self::quaggans::Quaggan;

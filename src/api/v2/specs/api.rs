@@ -10,4 +10,7 @@ pub trait ApiSpecs {
 	
 	fn colors(&self) -> ::Result<Vec<i32>>;
 	fn color(&self, id: i32) -> ::Result<Color>;
+	
+	fn quaggans(&self) -> ::Result<Vec<String>>;
+	fn quaggan(&self, id: &str) -> ::Result<Quaggan>;
 }

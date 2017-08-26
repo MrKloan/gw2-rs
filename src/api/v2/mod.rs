@@ -25,7 +25,7 @@ mod tests {
 		let cats = api.cats();
 		
 		assert!(cats.is_ok());
-		assert_eq!(cats.unwrap().len(), 32);
+		assert!(cats.unwrap().len() > 0);
 	}
 	
 	#[test]
@@ -43,7 +43,7 @@ mod tests {
 		let colors = api.colors();
 		
 		assert!(colors.is_ok());
-		assert_eq!(colors.unwrap().len(), 531);
+		assert!(colors.unwrap().len() > 0);
 	}
 	
 	#[test]
@@ -53,5 +53,23 @@ mod tests {
 		
 		assert!(color.is_ok());
 		assert_eq!(color.unwrap().name, "Dye Remover");
+	}
+	
+	#[test]
+	fn quaggans() {
+		let api = Api::default();
+		let quaggans = api.quaggans();
+		
+		assert!(quaggans.is_ok());
+		assert!(quaggans.unwrap().len() > 0);
+	}
+	
+	#[test]
+	fn quaggan() {
+		let api = Api::default();
+		let quaggan = api.quaggan("box");
+		
+		assert!(quaggan.is_ok());
+		assert_eq!(quaggan.unwrap().id, "box");
 	}
 }

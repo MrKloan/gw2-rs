@@ -50,4 +50,13 @@ impl ApiSpecs for Api {
 		let endpoint = format!("colors/{}", id);
 		self.client.request::<Color>(&endpoint)
 	}
+	
+	fn quaggans(&self) -> ::Result<Vec<String>> {
+		self.client.request::<Vec<String>>("quaggans")
+	}
+	
+	fn quaggan(&self, id: &str) -> ::Result<Quaggan> {
+		let endpoint = format!("quaggans/{}", id);
+		self.client.request::<Quaggan>(&endpoint)
+	}
 }

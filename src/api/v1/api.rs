@@ -1,16 +1,17 @@
-/// API v1 implementation.
+//! API v1 implementation.
 
 use api::prelude::*;
 use super::models::*;
+use super::specs::ApiSpecs;
 
-pub struct API {
+pub struct Api {
 	client: Client
 }
 
-impl API {
+impl Api {
 	
 	pub fn new(client: Client) -> Self {
-		API {
+		Api {
 			client: client
 		}
 	}
@@ -18,8 +19,11 @@ impl API {
 	pub fn builder() -> Builder {
 		Builder::new(Version::V1)
 	}
+}
+
+impl ApiSpecs for Api {
 	
-	pub fn build(&self) -> ::Result<Build> {
+	fn build(&self) -> ::Result<Build> {
 		self.client.request::<Build>("build")
 	}
 }

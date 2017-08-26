@@ -21,9 +21,33 @@ impl Api {
 	}
 }
 
+impl Default for Api {
+	fn default() -> Self {
+		Api::new(Api::builder().into())
+	}
+}
+
 impl ApiSpecs for Api {
 	
 	fn build(&self) -> ::Result<Build> {
 		self.client.request::<Build>("build")
+	}
+	
+	fn cats(&self) -> ::Result<Vec<i32>> {
+		self.client.request::<Vec<i32>>("cats")
+	}
+	
+	fn cat(&self, id: i32) -> ::Result<Cat> {
+		let endpoint = format!("cats/{}", id);
+		self.client.request::<Cat>(&endpoint)
+	}
+	
+	fn colors(&self) -> ::Result<Vec<i32>> {
+		self.client.request::<Vec<i32>>("colors")
+	}
+	
+	fn color(&self, id: i32) -> ::Result<Color> {
+		let endpoint = format!("colors/{}", id);
+		self.client.request::<Color>(&endpoint)
 	}
 }

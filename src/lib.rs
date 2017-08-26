@@ -27,17 +27,3 @@ mod error;
 pub use error::*;
 
 pub mod api;
-
-#[cfg(test)]
-mod tests {
-	use api::v1::prelude::*;
-	
-	#[test]
-	fn api_default_build() {
-		let api = Api::new(Api::builder().into());
-		let build = api.build();
-		
-		assert!(build.is_ok());
-		assert!(*build.unwrap() > 0);
-	}
-}

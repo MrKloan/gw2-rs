@@ -8,7 +8,7 @@ pub mod prelude;
 
 #[cfg(test)]
 mod tests {
-	use api::v1::prelude::*;
+	use api::v2::prelude::*;
 	
 	#[test]
 	fn build() {

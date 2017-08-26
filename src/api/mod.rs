@@ -14,6 +14,7 @@ mod builder;
 
 // API implementations
 pub mod v1;
+pub mod v2;
 
 // Prelude
 pub mod prelude;

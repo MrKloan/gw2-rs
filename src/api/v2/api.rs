@@ -17,13 +17,13 @@ impl Api {
 	}
 	
 	pub fn builder() -> Builder {
-		Builder::new(Version::V1)
+		Builder::new(Version::V2)
 	}
 }
 
 impl ApiSpecs for Api {
 	
 	fn build(&self) -> ::Result<Build> {
-		self.client.request::<Build>("build.json")
+		self.client.request::<Build>("build")
 	}
 }

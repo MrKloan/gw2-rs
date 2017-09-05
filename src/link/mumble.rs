@@ -7,7 +7,7 @@ pub struct Position {
 	/// A unit vector pointing out of the character's eyes.
 	pub front: [f32; 3],
 	/// A unit vector pointing out of the top of the character's head.
-	pub top: [f32; 3],
+	pub top: [f32; 3]
 }
 
 impl Default for Position {
@@ -30,7 +30,7 @@ pub struct LinkedMem {
 	identity: [wchar_t; 256],
 	context_len: u32,
 	context: [u8; 256],
-	description: [wchar_t; 2048],
+	description: [wchar_t; 2048]
 }
 
 impl LinkedMem {
@@ -82,7 +82,7 @@ impl Default for LinkedMem {
 			identity: [0; 256],
 			context_len: 0,
 			context: [0; 256],
-			description: [0; 2048],
+			description: [0; 2048]
 		}
 	}
 }

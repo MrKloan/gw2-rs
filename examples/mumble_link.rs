@@ -18,9 +18,9 @@ fn main() {
 			println!("Context: {}", link.context());
 			println!("Description: {}", link.description());
 		}
-			else {
-				println!("No new data...");
-			}
+		else {
+			println!("No new data...");
+		}
 		
 		thread::sleep(time::Duration::from_millis(2000));
 	}

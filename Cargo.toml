@@ -1,6 +1,6 @@
 [package]
 name = "gw2"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Valentin Fries <contact@fries.io>"]
 description = "Rust wrapper for the Guild Wars 2 REST and MumbleLink API"
 repository = "https://github.com/mrkloan/gw2-rs.git"

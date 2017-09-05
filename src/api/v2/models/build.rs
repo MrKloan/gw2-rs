@@ -1,4 +1,4 @@
-/// API v2 Build model: https://api.guildwars2.com/v2/build
+//! API v2 `/build`: https://api.guildwars2.com/v2/build
 
 use std::fmt;
 use std::ops::Deref;

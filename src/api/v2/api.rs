@@ -51,6 +51,24 @@ impl ApiSpecs for Api {
 		self.client.request::<Color>(&endpoint)
 	}
 	
+	fn currencies(&self) -> ::Result<Vec<i32>> {
+		self.client.request::<Vec<i32>>("currencies")
+	}
+	
+	fn currency(&self, id: i32) -> ::Result<Currency> {
+		let endpoint = format!("currencies/{}", id);
+		self.client.request::<Currency>(&endpoint)
+	}
+	
+	fn dungeons(&self) -> ::Result<Vec<String>> {
+		self.client.request::<Vec<String>>("dungeons")
+	}
+
+	fn dungeon(&self, id: &str) -> ::Result<Dungeon> {
+		let endpoint = format!("dungeons/{}", id);
+		self.client.request::<Dungeon>(&endpoint)
+	}
+	
 	fn quaggans(&self) -> ::Result<Vec<String>> {
 		self.client.request::<Vec<String>>("quaggans")
 	}

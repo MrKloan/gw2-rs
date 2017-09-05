@@ -11,6 +11,12 @@ pub trait ApiSpecs {
 	fn colors(&self) -> ::Result<Vec<i32>>;
 	fn color(&self, id: i32) -> ::Result<Color>;
 	
+	fn currencies(&self) -> ::Result<Vec<i32>>;
+	fn currency(&self, id: i32) -> ::Result<Currency>;
+	
+	fn dungeons(&self) -> ::Result<Vec<String>>;
+	fn dungeon(&self, id: &str) -> ::Result<Dungeon>;
+	
 	fn quaggans(&self) -> ::Result<Vec<String>>;
 	fn quaggan(&self, id: &str) -> ::Result<Quaggan>;
 }

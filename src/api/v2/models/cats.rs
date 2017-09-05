@@ -1,4 +1,4 @@
-//!API v2 `/cats`: https://wiki.guildwars2.com/wiki/API:2/cats
+//! API v2 `/cats`: https://wiki.guildwars2.com/wiki/API:2/cats
 
 #[derive(
 	Deserialize,

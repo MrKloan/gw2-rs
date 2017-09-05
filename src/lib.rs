@@ -12,6 +12,12 @@ extern crate serde_json;
 #[macro_use]
 extern crate serde_derive;
 
+extern crate libc;
+#[cfg(windows)]
+extern crate kernel32;
+#[cfg(windows)]
+extern crate winapi;
+
 // Constants
 /// Package name
 pub const PACKAGE: &'static str = env!("CARGO_PKG_NAME");
@@ -27,3 +33,5 @@ mod error;
 pub use error::*;
 
 pub mod api;
+#[cfg(windows)]
+pub mod link;
